@@ -1,0 +1,36 @@
+{
+    "name": "compressedstorage",
+    "version": "1.0.0",
+    "description": "Extends Storage class to transparently compress the strings in the backing storage (localStorage by default)",
+    "main": "compressedstorage.js",
+    "typings": "compressedstorage.d.ts",
+    "scripts": {
+      "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ropg/compressedstorage.git"
+    },
+    "keywords": [
+        "localStorage",
+        "sessionStorage",
+        "storage",
+        "object",
+        "es6",
+        "proxy",
+        "compression",
+        "obfuscation"
+    ],
+    "author": "Rop Gonggrijp",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ropg/compressedstorage/issues"
+    },
+    "homepage": "https://github.com/ropg/compressedstorage#readme",
+    "devDependencies": {
+        "jest": "^26.6.3"
+    },
+    "dependencies": {
+        "lz-string": "^1.4.4"
+    }
+}
