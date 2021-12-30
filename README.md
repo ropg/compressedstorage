@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/compressedstorage.svg)](https://badge.fury.io/js/compressedstorage) [![license](https://badgen.net/github/license/ropg/compressedstorage)](https://github.com/ropg/compressedstorage/blob/main/LICENSE) [![github](https://img.shields.io/github/last-commit/ropg/compressedstorage)](https://github.com/ropg/compressedstorage)
 
-# compressedStorage
+# CompressedStorage
 
 **Transparent proxy to compress data in localStorage or sessionStorage**
 
@@ -25,14 +25,14 @@ npm install compressedstorage --save
 And then in your code, simply say:
 
 ```js
-const compressedStorage = require('compressedstorage');
+const CompressedStorage = require('compressedstorage');
 ```
 
 If you're on your own, you might try:
 
 ```js
 <script type="module">
-import compressedStorage from 'https://cdn.skypack.dev/compressedstorage';
+import CompressedStorage from 'https://cdn.skypack.dev/compressedstorage';
 
 // [[ your code here ]]
 
@@ -43,7 +43,8 @@ Either way, once you have access to the function provided by this module, you ca
 
 ```js
 // Defaults to using window.localStorage, but takes any other object as argument
-const myStore = compressedStorage()
+// e.g.:   const myStore = CompressedStorage(window.sessionStorage)
+const myStore = CompressedStorage()
 
 const myString = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
@@ -79,10 +80,10 @@ console.log(myStore.test == myString)
 
 ### What it doesn't do
 
-* This is string-based storage, like `localStorage` or `sessionStorage` themselves. If you want to store objects, you'll need to `JSON.stringify` them. Better yet, use `compressedStorage` as the backend for `storageObject` to keep an arbitrary-depth object in sync with what's in storage. It's debounced (so you don't take a performance hit if you're writing to large objects very often), and you can force it to keep the structure of your storage fixed. 
+* This is string-based storage, like `localStorage` or `sessionStorage` themselves. If you want to store objects, you'll need to `JSON.stringify` them. Better yet, use my [`StorageObject`🔗&nbsp;](https://github.com/ropg/storageobject) with `CompressedStorage` as its back-end to keep an arbitrary-depth object in sync with what's in storage. It's debounced (so you don't take a performance hit if you're writing to large objects very often) and you can have multiple running in parallel.
 
 &nbsp;
 
 ### Good to know
 
-* No dependency hell. The only depndency is [`lz-string`](https://www.npmjs.com/package/lz-string) for the compression, which does not have any further dependencies.
+* No dependency hell. The only depndency is [`lz-string`](https://www.npmjs.com/package/lz-string) for the compression/decompression, which does not have any further dependencies.

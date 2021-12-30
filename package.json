@@ -1,7 +1,7 @@
 {
     "name": "compressedstorage",
-    "version": "1.0.0",
-    "description": "Extends Storage class to transparently compress the strings in the backing storage (localStorage by default)",
+    "version": "1.1.0",
+    "description": "Proxy in front of Storage class to transparently compress the strings in localStorage or sessionStorage",
     "main": "compressedstorage.js",
     "typings": "compressedstorage.d.ts",
     "scripts": {

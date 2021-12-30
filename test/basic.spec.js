@@ -1,7 +1,7 @@
-const compressedStorage = require("..");
+const CompressedStorage = require("..");
 
 const store = {};
-const proxy = compressedStorage(store);
+const proxy = CompressedStorage(store);
 
 string = 
 `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
